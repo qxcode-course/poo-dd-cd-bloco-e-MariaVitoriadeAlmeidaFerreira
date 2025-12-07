@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2025-12-07_11-19-44",
-            "content": "",
+            "content": "@@ -1,77 +0,0 @@\n-class Animal:%0A    def __init__(self, name: str):%0A        self.__name = name%0A%0A\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-12-07_11-32-47",
+            "content": "@@ -35,268 +35,43 @@\n f, n\n-ome):%0A        self.__nome = nome%0A    %0A    def apresentar_nome(self):%0A        print(f%22Eu sou um(a) %7Bself.__nome%7D%22)%0A%0Aclass Elefante(Animal):%0A    def __init__(self, nome):%0A        super().__init__(nome)%0A%0Aelefante = Elefante(%22dumbo%22)%0Aelefante.apresentar_nome()%0A    %0A\n+ame: str):%0A        self.__name = name\n %0A%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-12-07_11-42-08",
+            "content": "@@ -150,54 +150,8 @@\n %22)%0A%0A\n-    def fazerSom(self):%0A        return %22som%22%0A%0A\n clas\n@@ -236,58 +236,8 @@\n e)%0A%0A\n-    def fazerSom(self):%0A        return %22brummm%22%0A%0A%0A\n elef\n@@ -292,28 +292,8 @@\n e()%0A\n-elefante.fazerSom()%0A\n     \n",
+            "lines": "16"
+        },
+        {
+            "label": "2025-12-07_11-47-07",
+            "content": "@@ -388,15 +388,8 @@\n e()%0A\n-print (\n elef\n@@ -403,17 +403,16 @@\n zerSom()\n-)\n %0A    %0A%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-12-07_11-47-55",
+            "content": "class Animal:\n    def __init__(self, nome):\n        self.__nome = nome\n    \n    def apresentar_nome(self):\n        print(f\"Eu sou um(a) {self.__nome}\")\n\n    def fazerSom(self):\n        return \"som\"\n\nclass Elefante(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n\n    def fazerSom(self):\n        return \"brummm\"\n\n\nelefante = Elefante(\"dumbo\")\nelefante.apresentar_nome()\nprint (elefante.fazerSom())\n    \n\n\n",
+            "lines": "24"
         }
     ]
 }
