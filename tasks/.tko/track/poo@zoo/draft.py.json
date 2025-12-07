@@ -82,8 +82,73 @@
         },
         {
             "label": "2025-12-07_14-32-14",
-            "content": "from abc import ABC, abstractmethod;\n\nclass Animal(ABC):\n    def __init__(self, nome):\n        self.__nome = nome\n    \n    def getNome(self):\n        return self.__nome\n    \n    def apresentar_nome(self):\n        print(f\"Eu sou {self.__nome}\")\n\n    @abstractmethod\n    def fazerSom(self):\n       pass\n       #deve ser implementando nas subclassses\n    \n    @abstractmethod\n    def mover(self):\n        pass\n\nclass Elefante(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n\n    def fazerSom(self):\n        return \"brummm\"\n    \n    def mover(self):\n        return \"passos pesados\"\n    \nclass Gato(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n    \n    def fazerSom(self):\n        return \"miau miau\"\n    \n    def mover(self):\n        return \"passos ageis\"\n    \nclass Cavalo(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n\n    def fazerSom(self):\n        return \"iiirrrr\"\n    \n    def mover(self):\n        return \"pocoto pocoto\"\n\nelefante = Elefante(\"dumbo\")\nelefante.apresentar_nome()\nprint (elefante.fazerSom())\nprint (elefante.mover())\n\ngato = Gato(\"gato de botas\")\ngato.apresentar_nome()\nprint (gato.fazerSom())\nprint (gato.mover())\n\ncavalo = Cavalo(\"Pe de pano\")\ncavalo.apresentar_nome()\nprint(cavalo.fazerSom())\nprint(cavalo.mover())\n\n\n",
+            "content": "@@ -991,178 +991,8 @@\n o%22%0A%0A\n-%0Adef apresentar(animal = Animal):%0A%0A    animal.apresentar_nome()%0A    animal.fazerSom()%0A    animal.mover()%0A    %0A    print(f%22tipo/classe:%7Btype(animal).__nome__%7D%22)%0A    %0A    #\n elef\n@@ -1016,21 +1016,16 @@\n dumbo%22)%0A\n-    #\n elefante\n@@ -1039,29 +1039,24 @@\n ntar_nome()%0A\n-    #\n print (elefa\n@@ -1067,29 +1067,24 @@\n fazerSom())%0A\n-    #\n print (elefa\n@@ -1097,21 +1097,16 @@\n ver())%0A%0A\n-    #\n gato = G\n@@ -1126,21 +1126,16 @@\n botas%22)%0A\n-    #\n gato.apr\n@@ -1145,29 +1145,24 @@\n ntar_nome()%0A\n-    #\n print (gato.\n@@ -1169,29 +1169,24 @@\n fazerSom())%0A\n-    #\n print (gato.\n@@ -1195,21 +1195,16 @@\n ver())%0A%0A\n-    #\n cavalo =\n@@ -1225,21 +1225,16 @@\n  pano%22)%0A\n-    #\n cavalo.a\n@@ -1250,21 +1250,16 @@\n _nome()%0A\n-    #\n print(ca\n@@ -1275,21 +1275,16 @@\n rSom())%0A\n-    #\n print(ca\n",
             "lines": "67"
+        },
+        {
+            "label": "2025-12-07_14-38-52",
+            "content": "@@ -1146,22 +1146,16 @@\n ome__%7D%22)\n-%0A%0A    \n %0A    %0A  \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-12-07_14-39-18",
+            "content": "@@ -1156,97 +1156,8 @@\n     \n-animais = %5BElefante(%22Dumbo%22), Gato(%22Gato de botas%22), Cavalo(%22Pe de panno%22)%5D%0A%0Aapresentar()\n %0A   \n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-12-07_14-40-43",
+            "content": "@@ -1003,22 +1003,16 @@\n esentar(\n-self, \n animal =\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-12-07_14-40-54",
+            "content": "@@ -1237,67 +1237,8 @@\n o%22)%5D\n-%0A    %0A    for animal in animais:%0A        apresentar(animal)\n %0A%0Aap\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-12-07_14-41-48",
+            "content": "@@ -1036,30 +1036,8 @@\n     \n-print (%22Apresenta%C3%A7%C3%A3o%22,\n anim\n@@ -1056,17 +1056,16 @@\n r_nome()\n-)\n %0A    ani\n@@ -1103,16 +1103,219 @@\n ()%0A    %0A\n+    print(f%22tipo/classe:%7Btype(animal).__nome__%7D%22)%0A%0A    animais = %5BElefante(%22Dumbo%22), Gato(%22Gato de botas%22), Cavalo(%22Pe de panno%22)%5D%0A    %0A    for animal in animais:%0A        apresentar(animal)%0A%0Aapresentar()\n %0A    %0A  \n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-12-07_14-43-00",
+            "content": "@@ -1052,17 +1052,16 @@\n senta%C3%A7%C3%A3o\n-:\n %22,animal\n@@ -1087,23 +1087,8 @@\n %0A   \n- print (%22Som:%22,\n  ani\n@@ -1105,36 +1105,12 @@\n om()\n-)\n %0A   \n- print (%22Movimenta%C3%A7%C3%A3o%22,\n  ani\n@@ -1124,170 +1124,15 @@\n er()\n-)\n %0A    %0A%0A\n-def main():%0A    animais = %5BElefante(%22Dumbo%22), Gato(%22Gato de botas%22), Cavalo(%22Pe de Pano%22)%5D%0A%0A    for animal in animais:%0A        apresentar(animal)%0A%0Amain()%0A\n     \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-12-07_14-46-11",
+            "content": "@@ -1007,16 +1007,22 @@\n tar(\n+self, \n animal \n-:\n+=\n  Ani\n@@ -1028,24 +1028,47 @@\n imal):%0A%0A    \n+print (%22Apresenta%C3%A7%C3%A3o:%22,\n animal.apres\n@@ -1075,24 +1075,25 @@\n entar_nome()\n+)\n %0A    print (\n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-12-07_14-47-57",
+            "content": "@@ -1113,17 +1113,16 @@\n menta%C3%A7%C3%A3o\n-:\n %22, anima\n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-12-07_14-48-11",
+            "content": "@@ -1137,52 +1137,8 @@\n ())%0A\n-    print(f%22Tipo: %7Btype(animal).__name__%7D%22)%0A\n     \n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-12-07_14-49-54",
+            "content": "@@ -990,232 +990,8 @@\n to%22%0A\n-    %0Aclass Lobo(Animal):%0A    def __init__(self, nome):%0A        super().__init__(nome)%0A    %0A    def fazerSom(self):%0A        return %22auuu baby i'm preying on you tonight%22%0A    %0A    def mover(self):%0A        return %22like animal%22%0A\n %0A%0Ade\n@@ -1276,24 +1276,8 @@\n no%22)\n-, Lobo(%22Maroon%22)\n %5D%0A%0A \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-12-07_14-55-07",
+            "content": "@@ -581,28 +581,22 @@\n rn %22\n-imcomoda muita gente\n+passos pesados\n %22%0A  \n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-12-07_14-56-50",
+            "content": "@@ -581,11 +581,28 @@\n rn %22\n-voa\n+imcomoda muita gente\n %22%0A  \n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-12-07_14-57-04",
+            "content": "from abc import ABC, abstractmethod;\n\nclass Animal(ABC):\n    def __init__(self, nome):\n        self.__nome = nome\n    \n    def getNome(self):\n        return self.__nome\n    \n    def apresentar_nome(self):\n        print(f\"Eu sou {self.__nome}\")\n\n    @abstractmethod\n    def fazerSom(self):\n       pass\n       #deve ser implementando nas subclassses\n    \n    @abstractmethod\n    def mover(self):\n        pass\n\nclass Elefante(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n\n    def fazerSom(self):\n        return \"brummm\"\n    \n    def mover(self):\n        return \"voa\"\n    \nclass Gato(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n    \n    def fazerSom(self):\n        return \"miau miau\"\n    \n    def mover(self):\n        return \"passos ageis\"\n    \nclass Cavalo(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n\n    def fazerSom(self):\n        return \"iiirrrr\"\n    \n    def mover(self):\n        return \"pocoto pocoto\"\n    \nclass Lobo(Animal):\n    def __init__(self, nome):\n        super().__init__(nome)\n    \n    def fazerSom(self):\n        return \"auuu baby i'm preying on you tonight\"\n    \n    def mover(self):\n        return \"like animal\"\n\n\ndef apresentar(animal : Animal):\n\n    animal.apresentar_nome()\n    print (\"Som:\", animal.fazerSom())\n    print (\"Movimenta\u00e7\u00e3o:\", animal.mover())\n    print(f\"Tipo: {type(animal).__name__}\")\n    \n\ndef main():\n    animais = [Elefante(\"Dumbo\"), Gato(\"Gato de botas\"), Cavalo(\"Pe de Pano\"), Lobo(\"Maroon\")]\n\n    for animal in animais:\n        apresentar(animal)\n\nmain()\n    \n    #elefante = Elefante(\"dumbo\")\n    #elefante.apresentar_nome()\n    #print (elefante.fazerSom())\n    #print (elefante.mover())\n\n    #gato = Gato(\"gato de botas\")\n    #gato.apresentar_nome()\n    #print (gato.fazerSom())\n    #print (gato.mover())\n\n    #cavalo = Cavalo(\"Pe de pano\")\n    #cavalo.apresentar_nome()\n    #print(cavalo.fazerSom())\n    #print(cavalo.mover())\n\n\n",
+            "lines": "94"
         }
     ]
 }

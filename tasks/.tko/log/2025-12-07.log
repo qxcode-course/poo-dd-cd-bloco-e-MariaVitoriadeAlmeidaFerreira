@@ -78,3 +78,27 @@
 2025-12-07 14:29:12, MOVE, v:1, k:poo@zoo, mode:PICK
 2025-12-07 14:31:58, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:67
 2025-12-07 14:32:14, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:67
+2025-12-07 14:38:52, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:100, size:76
+2025-12-07 14:39:18, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:100, size:78
+2025-12-07 14:39:22, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-07 14:39:36, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-07 14:40:43, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:80
+2025-12-07 14:40:54, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:80
+2025-12-07 14:41:48, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:83
+2025-12-07 14:41:49, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0
+2025-12-07 14:43:00, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:100, size:76
+2025-12-07 14:43:03, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:100
+2025-12-07 14:46:11, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:83
+2025-12-07 14:47:57, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:83
+2025-12-07 14:48:11, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:83
+2025-12-07 14:49:54, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:84
+2025-12-07 14:50:42, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-07 14:50:55, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-07 14:50:56, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-07 14:50:57, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-07 14:55:07, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:94
+2025-12-07 14:56:50, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:94
+2025-12-07 14:57:04, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:94
+2025-12-07 15:00:18, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-07 15:00:26, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-07 15:00:27, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0

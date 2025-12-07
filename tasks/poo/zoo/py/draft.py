@@ -27,7 +27,7 @@ class Elefante(Animal):
         return "brummm"
     
     def mover(self):
-        return "passos pesados"
+        return "voa"
     
 class Gato(Animal):
     def __init__(self, nome):
@@ -48,23 +48,47 @@ class Cavalo(Animal):
     
     def mover(self):
         return "pocoto pocoto"
+    
+class Lobo(Animal):
+    def __init__(self, nome):
+        super().__init__(nome)
+    
+    def fazerSom(self):
+        return "auuu baby i'm preying on you tonight"
+    
+    def mover(self):
+        return "like animal"
 
 
-def apresentar(animal = Animal):
+def apresentar(animal : Animal):
 
-    elefante = Elefante("dumbo")
-    elefante.apresentar_nome()
-    print (elefante.fazerSom())
-    print (elefante.mover())
+    animal.apresentar_nome()
+    print ("Som:", animal.fazerSom())
+    print ("Movimentação:", animal.mover())
+    print(f"Tipo: {type(animal).__name__}")
+    
 
-gato = Gato("gato de botas")
-gato.apresentar_nome()
-print (gato.fazerSom())
-print (gato.mover())
+def main():
+    animais = [Elefante("Dumbo"), Gato("Gato de botas"), Cavalo("Pe de Pano"), Lobo("Maroon")]
 
-cavalo = Cavalo("Pe de pano")
-cavalo.apresentar_nome()
-print(cavalo.fazerSom())
-print(cavalo.mover())
+    for animal in animais:
+        apresentar(animal)
+
+main()
+    
+    #elefante = Elefante("dumbo")
+    #elefante.apresentar_nome()
+    #print (elefante.fazerSom())
+    #print (elefante.mover())
+
+    #gato = Gato("gato de botas")
+    #gato.apresentar_nome()
+    #print (gato.fazerSom())
+    #print (gato.mover())
+
+    #cavalo = Cavalo("Pe de pano")
+    #cavalo.apresentar_nome()
+    #print(cavalo.fazerSom())
+    #print(cavalo.mover())
 
 
