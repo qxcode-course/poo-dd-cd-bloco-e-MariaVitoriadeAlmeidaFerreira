@@ -2,8 +2,18 @@
     "patches": [
         {
             "label": "2025-12-07_11-19-49",
-            "content": "",
+            "content": "@@ -1,367 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0A%0Aclass Pagamento(ABC):%0A    def __init__(self, valor:float, descricao:str):%0A        self.__valor = valor%0A        self.__descricao: str%0A    %0A    def resumo(self):%0A        print(f%22Pagamento de R$ %7Bself.__valor%7D: %7Bself.__descricao%7D%5Cn%22)%0A%0A    def validar_valor(self,):%0A        if self.__valor %3C= 0:%0A            raise Exception(%22Fail%22)%0A%0A\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-12-07_15-12-39",
+            "content": "@@ -363,152 +363,5 @@\n l%22)%0A\n-    %0A    #def processar()%0A    %0Aclass cartao_de_Credito:%0A    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):%0A        \n %0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-12-07_15-42-53",
+            "content": "from abc import ABC, abstractmethod\n\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self.__valor = valor\n        self.__descricao: str\n    \n    def resumo(self):\n        print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    def validar_valor(self,):\n        if self.__valor <= 0:\n            raise Exception(\"Fail\")\n    \n    #def processar()\n    \nclass cartao_de_Credito:\n    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):\n        \n",
+            "lines": "20"
         }
     ]
 }
