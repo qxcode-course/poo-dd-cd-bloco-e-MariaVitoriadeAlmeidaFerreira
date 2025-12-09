@@ -17,8 +17,28 @@
         },
         {
             "label": "2025-12-09_15-40-58",
-            "content": "from abc import ABC, abstractmethod\n\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self.__valor = valor\n        self.__descricao: str\n    \n    def resumo(self):\n        print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    def validar_valor(self,):\n        if self.__valor <= 0:\n            raise Exception(\"Fail\")\n    \n    #def processar()\n    \nclass cartao_de_Credito(Pagamento):\n    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):\n        super.()__init__(valor)\n",
+            "content": "@@ -35,122 +35,8 @@\n d%0A%0A%0A\n-class metodo_Pagamento (ABC):%0A%0A    @abstractmethod%0A    def processar_pagamento(self, valor: float):%0A        pass%0A%0A\n clas\n@@ -106,16 +106,8 @@\n :str\n-, metodo\n ):%0A \n@@ -167,51 +167,8 @@\n  str\n- = descricao%0A        self.__metodo = metodo\n %0A   \n",
             "lines": "20"
+        },
+        {
+            "label": "2025-12-09_16-04-48",
+            "content": "@@ -149,91 +149,8 @@\n ss%0A%0A\n-%0Aclass metodoPix(metodo_Pagamento):%0A    def __init__ (self, chave: int):%0A        %0A%0A\n clas\n@@ -450,24 +450,25 @@\n r_valor(self\n+,\n ):%0A        i\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-12-09_16-10-59",
+            "content": "@@ -216,172 +216,22 @@\n ve: \n-str):%0A        self.__chave: str = chave %0A    %0A    def processar_pagamento(self, valor: float):%0A        print(f%22pagamento da chave: %7Bself.__chave%7D no valo:%7Bvalor%7D%22)%0A\n+int):%0A        \n %0A%0Acl\n@@ -637,17 +637,16 @@\n ()%0A    %0A\n-#\n class ca\n@@ -673,17 +673,16 @@\n mento):%0A\n-#\n     def \n@@ -756,17 +756,16 @@\n nivel):%0A\n-#\n         \n@@ -792,80 +792,4 @@\n or)%0A\n-%0Apix = metodoPix(%22teste@gmail.com%22)%0Apag = Pagamento(11, %22teste%22)%0Aprint(pag)%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-12-09_16-15-21",
+            "content": "@@ -145,16 +145,17 @@\n   pass%0A%0A\n+%0A\n class me\n@@ -579,98 +579,8 @@\n def \n-pagar(self):%0A        self.__metodo.processar_pagamento(self.__valor)%0A   %0A   %0A   %0A    #def \n resu\n@@ -597,17 +597,16 @@\n         \n-#\n print(f%22\n@@ -661,25 +661,24 @@\n o%7D%5Cn%22)%0A%0A    \n-#\n def validar_\n@@ -698,17 +698,16 @@\n         \n-#\n if self.\n@@ -732,17 +732,16 @@\n         \n-#\n raise Ex\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-12-09_16-20-12",
+            "content": "from abc import ABC, abstractmethod\n\n\nclass metodo_Pagamento (ABC):\n\n    @abstractmethod\n    def processar_pagamento(self, valor: float):\n        pass\n\nclass metodoPix(metodo_Pagamento):\n    def __init__ (self, chave: str):\n        self.__chave: str = chave \n    \n    def processar_pagamento(self, valor: float):\n        print(f\"pagamento da chave: {self.__chave} no valo:{valor}\")\n\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str, metodo):\n        self.__valor = valor\n        self.__descricao: str = descricao\n        self.__metodo = metodo\n    \n    def pagar(self):\n        self.__metodo.processar_pagamento(self.__valor)\n   \n   \n   \n    #def resumo(self):\n        #print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    #def validar_valor(self):\n        #if self.__valor <= 0:\n            #raise Exception(\"Fail\")\n    \n    #def processar()\n    \n#class cartao_de_Credito(Pagamento):\n#    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):\n#        super.()__init__(valor)\n\npix = metodoPix(\"teste@gmail.com\")\npag = Pagamento(11, \"teste\")\nprint(pag)\n",
+            "lines": "44"
         }
     ]
 }
