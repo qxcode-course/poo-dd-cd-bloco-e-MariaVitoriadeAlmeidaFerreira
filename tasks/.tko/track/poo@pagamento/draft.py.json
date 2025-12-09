@@ -12,7 +12,12 @@
         },
         {
             "label": "2025-12-07_15-42-53",
-            "content": "from abc import ABC, abstractmethod\n\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self.__valor = valor\n        self.__descricao: str\n    \n    def resumo(self):\n        print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    def validar_valor(self,):\n        if self.__valor <= 0:\n            raise Exception(\"Fail\")\n    \n    #def processar()\n    \nclass cartao_de_Credito:\n    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):\n        \n",
+            "content": "@@ -417,19 +417,8 @@\n dito\n-(Pagamento)\n :%0A  \n@@ -510,28 +510,5 @@\n     \n-super.()__init__(valor)\n %0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-12-09_15-40-58",
+            "content": "from abc import ABC, abstractmethod\n\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self.__valor = valor\n        self.__descricao: str\n    \n    def resumo(self):\n        print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    def validar_valor(self,):\n        if self.__valor <= 0:\n            raise Exception(\"Fail\")\n    \n    #def processar()\n    \nclass cartao_de_Credito(Pagamento):\n    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):\n        super.()__init__(valor)\n",
             "lines": "20"
         }
     ]
