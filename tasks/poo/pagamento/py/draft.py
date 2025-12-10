@@ -1,43 +1,35 @@
 from abc import ABC, abstractmethod
 
-
-class metodo_Pagamento (ABC):
-
-    @abstractmethod
-    def processar_pagamento(self, valor: float):
-        pass
-
-class metodoPix(metodo_Pagamento):
-    def __init__ (self, chave: str):
-        self.__chave: str = chave 
-    
-    def processar_pagamento(self, valor: float):
-        print(f"pagamento da chave: {self.__chave} no valo:{valor}")
-
-
 class Pagamento(ABC):
-    def __init__(self, valor:float, descricao:str, metodo):
+    def __init__(self, valor:float, descricao:str):
         self.__valor = valor
-        self.__descricao: str = descricao
-        self.__metodo = metodo
-    
-    def pagar(self):
-        self.__metodo.processar_pagamento(self.__valor)
-   
-   
-    #def resumo(self):
-        #print(f"Pagamento de R$ {self.__valor}: {self.__descricao}\n")
+        self.__descricao: str = descricao       
+ 
+    def resumo(self):
+        print(f"Pagamento de R$ {self.__valor}: {self.__descricao}\n")
 
-    #def validar_valor(self):
-        #if self.__valor <= 0:
-            #raise Exception("Fail")
+    def validar_valor(self):
+        if self.__valor <= 0:
+            raise Exception("Fail valor menor que zero")
     
-    #def processar()
+    @abstractmethod
+    def processar(self):
+        pass
     
-#class cartao_de_Credito(Pagamento):
-#    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):
-#        super.()__init__(valor)
+class cartao_de_Credito(Pagamento):
+    def __init__(self, valor, descricao: str, numero: str, nome_titular: str, limite_disponivel: int):
+       super().__init__(valor, descricao)
+       self.__numero: str = numero
+       self.__nome_titular: str = nome_titular
+       self.__limite_disponivel: int = limite_disponivel
 
-pix = metodoPix("teste@gmail.com")
-pag = Pagamento(11, "teste")
-print(pag)
+    def processar(self):
+        if self.__valor > self.__limite_disponivel:
+            raise Exception("Fail: limite estourado")
+        else:
+            self.__limite_disponivel -= self.__valor
+            print("Pagamento efetuado no Credito")
+    
+class Pix(Pagamento):
+    def __init__(self, valor, descricao, chave: str, banco: str):
+        super().__init__

@@ -37,8 +37,23 @@
         },
         {
             "label": "2025-12-09_16-20-12",
-            "content": "from abc import ABC, abstractmethod\n\n\nclass metodo_Pagamento (ABC):\n\n    @abstractmethod\n    def processar_pagamento(self, valor: float):\n        pass\n\nclass metodoPix(metodo_Pagamento):\n    def __init__ (self, chave: str):\n        self.__chave: str = chave \n    \n    def processar_pagamento(self, valor: float):\n        print(f\"pagamento da chave: {self.__chave} no valo:{valor}\")\n\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str, metodo):\n        self.__valor = valor\n        self.__descricao: str = descricao\n        self.__metodo = metodo\n    \n    def pagar(self):\n        self.__metodo.processar_pagamento(self.__valor)\n   \n   \n   \n    #def resumo(self):\n        #print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    #def validar_valor(self):\n        #if self.__valor <= 0:\n            #raise Exception(\"Fail\")\n    \n    #def processar()\n    \n#class cartao_de_Credito(Pagamento):\n#    def __init__(self, valor, descricao, numero, nome_titular, limite_disponivel):\n#        super.()__init__(valor)\n\npix = metodoPix(\"teste@gmail.com\")\npag = Pagamento(11, \"teste\")\nprint(pag)\n",
+            "content": "@@ -647,24 +647,28 @@\n or)%0A   %0A   %0A\n+   %0A\n     #def res\n",
             "lines": "44"
+        },
+        {
+            "label": "2025-12-09_16-29-25",
+            "content": "@@ -30,16 +30,17 @@\n method%0A%0A\n+%0A\n class me\n@@ -49,31 +49,33 @@\n do_Pagamento\n+ \n (ABC):%0A\n+%0A\n     @abstrac\n@@ -364,19 +364,17 @@\n  no valo\n-r: \n+:\n %7Bvalor%7D%22\n@@ -376,16 +376,17 @@\n lor%7D%22)%0A%0A\n+%0A\n class Pa\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-12-09_20-29-53",
+            "content": "@@ -30,16 +30,361 @@\n method%0A%0A\n+class metodo_Pagamento(ABC):%0A    @abstractmethod%0A    def processar_pagamento(self, valor: float):%0A        pass%0A%0Aclass metodoPix(metodo_Pagamento):%0A    def __init__ (self, chave: str):%0A        self.__chave: str = chave %0A    %0A    def processar_pagamento(self, valor: float):%0A        print(f%22pagamento da chave: %7Bself.__chave%7D no valor: %7Bvalor%7D%22)%0A%0A\n class Pa\n@@ -446,16 +446,24 @@\n icao:str\n+, metodo\n ):%0A     \n@@ -531,22 +531,135 @@\n icao\n+%0A\n        \n-%0A %0A    \n+ self.__metodo = metodo%0A    %0A    def pagar(self):%0A        self.__metodo.processar_pagamento(self.__valor)%0A   %0A   %0A    #\n def \n@@ -672,32 +672,33 @@\n (self):%0A        \n+#\n print(f%22Pagament\n@@ -745,24 +745,25 @@\n o%7D%5Cn%22)%0A%0A    \n+#\n def validar_\n@@ -775,32 +775,33 @@\n (self):%0A        \n+#\n if self.__valor \n@@ -818,16 +818,17 @@\n         \n+#\n raise Ex\n@@ -844,100 +844,43 @@\n Fail\n- valor menor que zero%22)%0A    %0A    @abstractmethod%0A    def processar(self):%0A        pass%0A    %0A\n+%22)%0A    %0A    #def processar()%0A    %0A#\n clas\n@@ -903,32 +903,33 @@\n ito(Pagamento):%0A\n+#\n     def __init__\n@@ -955,21 +955,16 @@\n icao\n-: str\n , numero\n : st\n@@ -959,21 +959,16 @@\n , numero\n-: str\n , nome_t\n@@ -973,21 +973,16 @@\n _titular\n-: str\n , limite\n@@ -996,31 +996,28 @@\n ivel\n-: int\n ):%0A\n+#\n        \n+ \n super\n+.\n ()\n-.\n __in\n@@ -1030,254 +1030,82 @@\n alor\n-, descricao)%0A       self.__numero: str = numero%0A       self.__nome_titular: str = nome_titular%0A       self.__limite_disponivel: int = limite_disponivel%0A%0A    def processar(self):%0A        if self.__valor %3E self.__limite_disponivel:%0A            %0A    %0A%0A\n+)%0A%0Apix = metodoPix(%22teste@gmail.com%22)%0Apag = Pagamento(11, %22teste%22)%0Aprint(pag)\n %0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-12-09_20-48-30",
+            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self.__valor = valor\n        self.__descricao: str = descricao       \n \n    def resumo(self):\n        print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    def validar_valor(self):\n        if self.__valor <= 0:\n            raise Exception(\"Fail valor menor que zero\")\n    \n    @abstractmethod\n    def processar(self):\n        pass\n    \nclass cartao_de_Credito(Pagamento):\n    def __init__(self, valor, descricao: str, numero: str, nome_titular: str, limite_disponivel: int):\n       super().__init__(valor, descricao)\n       self.__numero: str = numero\n       self.__nome_titular: str = nome_titular\n       self.__limite_disponivel: int = limite_disponivel\n\n    def processar(self):\n        if self.__valor > self.__limite_disponivel:\n            \n    \n\n\n",
+            "lines": "31"
         }
     ]
 }
