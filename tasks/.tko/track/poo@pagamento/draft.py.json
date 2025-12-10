@@ -52,8 +52,73 @@
         },
         {
             "label": "2025-12-09_20-48-30",
-            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self.__valor = valor\n        self.__descricao: str = descricao       \n \n    def resumo(self):\n        print(f\"Pagamento de R$ {self.__valor}: {self.__descricao}\\n\")\n\n    def validar_valor(self):\n        if self.__valor <= 0:\n            raise Exception(\"Fail valor menor que zero\")\n    \n    @abstractmethod\n    def processar(self):\n        pass\n    \nclass cartao_de_Credito(Pagamento):\n    def __init__(self, valor, descricao: str, numero: str, nome_titular: str, limite_disponivel: int):\n       super().__init__(valor, descricao)\n       self.__numero: str = numero\n       self.__nome_titular: str = nome_titular\n       self.__limite_disponivel: int = limite_disponivel\n\n    def processar(self):\n        if self.__valor > self.__limite_disponivel:\n            \n    \n\n\n",
+            "content": "@@ -876,281 +876,12 @@\n     \n-raise Exception(%22Fail: limite estourado%22)%0A        else:%0A            self.__limite_disponivel -= self.__valor%0A            print(%22Pagamento efetuado no Credito%22)%0A    %0Aclass Pix(Pagamento):%0A    def __init__(self, valor, descricao, chave: str, banco: str):%0A        super().__init__\n+%0A    %0A%0A%0A\n",
             "lines": "31"
+        },
+        {
+            "label": "2025-12-09_21-18-57",
+            "content": "@@ -1153,1062 +1153,4 @@\n it__\n-(valor, descricao)%0A        self.__chave: str = chave%0A        self.__banco: str = banco%0A    %0A    def processar(self):%0A        if self.validar_valor():%0A            print(f%22Pix com o valor:%7Bself.__valor%7D efetuado com sucesso para o %7Bself.__chave%7D para o banco: %7Bself.__banco%7D%22)%0A%0Aclass Boleto(Pagamento):%0A    def __init__(self, valor, descricao, codigo_barra: str, vencimento: str):%0A        super().__init__(valor, descricao)%0A        self.__codigo_barra: str = codigo_barra%0A        self.__vencimento: str = vencimento%0A%0A    def processar(self):%0A        print (%22Boleto gerado. Aguardando pagamento...%22) %0A%0Adef processar_pagamento(pagamento: Pagamento):%0A    pagamento.validar_valor()%0A    pagamento.resumo()%0A    pagamento.processar()%0A%0Apagamentos = %5B%0A    Pix(150, %22Camisa esportiva%22, %22email@ex.com%22, %22Banco XPTO%22),%0A    cartao_de_Credito(400, %22T%C3%AAnis esportivo%22, %221234 5678 9123 4567%22, %22Cliente X%22, 500),%0A    Boleto(89.90, %22Livro de Python%22, %22123456789000%22, %222025-01-10%22),%0A    cartao_de_Credito(800, %22Notebook%22, %229999 8888 7777 6666%22, %22Cliente Y%22, 700),  # deve falhar%0A%5D\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-12-09_21-36-59",
+            "content": "@@ -2211,69 +2211,4 @@\n ar%0A%5D\n-%0Afor pagamento in pagamentos:%0A    processar_pagamento(pagamentos)\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-09_21-38-45",
+            "content": "@@ -2262,17 +2262,18 @@\n amento(pagamento\n+s\n )\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-39-29",
+            "content": "@@ -820,20 +820,19 @@\n     if s\n-uper\n+elf\n .__valor\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-42-45",
+            "content": "@@ -812,35 +812,36 @@\n f):%0A        if s\n-elf\n+uper\n .__valor %3E self.\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-44-06",
+            "content": "@@ -118,16 +118,17 @@\n   self._\n+_\n valor = \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-47-04",
+            "content": "@@ -397,46 +397,8 @@\n o%22)%0A\n-        else:%0A            return True%0A\n     \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-47-59",
+            "content": "@@ -146,16 +146,17 @@\n   self._\n+_\n descrica\n@@ -389,24 +389,62 @@\n  que zero%22)%0A\n+        else:%0A            return True%0A\n     %0A    @ab\n@@ -1307,24 +1307,27 @@\n f):%0A        \n+if \n self.validar\n@@ -1330,25 +1330,30 @@\n idar_valor()\n-%0A\n+:%0A    \n         prin\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-12-09_21-49-35",
+            "content": "@@ -819,24 +819,25 @@\n    if self._\n+_\n valor %3E self\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-50-12",
+            "content": "@@ -318,24 +318,25 @@\n    if self._\n+_\n valor %3C= 0:%0A\n@@ -1327,24 +1327,25 @@\n alor:%7Bself._\n+_\n valor%7D efetu\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-51-02",
+            "content": "@@ -239,24 +239,25 @@\n e R$ %7Bself._\n+_\n valor%7D: %7Bsel\n@@ -255,24 +255,25 @@\n or%7D: %7Bself._\n+_\n descricao%7D%5Cn\n@@ -966,24 +966,25 @@\n el -= self._\n+_\n valor%0A      \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-52-16",
+            "content": "@@ -2192,17 +2192,16 @@\n alhar%0A%5D%0A\n-%0A\n for paga\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-12-09_21-53-30",
+            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor:float, descricao:str):\n        self._valor = valor\n        self._descricao: str = descricao       \n \n    def resumo(self):\n        print(f\"Pagamento de R$ {self._valor}: {self._descricao}\\n\")\n\n    def validar_valor(self):\n        if self._valor <= 0:\n            raise Exception(\"Fail valor menor que zero\")\n    \n    @abstractmethod\n    def processar(self):\n        pass\n    \nclass cartao_de_Credito(Pagamento):\n    def __init__(self, valor, descricao: str, numero: str, nome_titular: str, limite_disponivel: int):\n       super().__init__(valor, descricao)\n       self.__numero: str = numero\n       self.__nome_titular: str = nome_titular\n       self.__limite_disponivel: int = limite_disponivel\n\n    def processar(self):\n        if self._valor > self.__limite_disponivel:\n            raise Exception(\"Fail: limite estourado\")\n        else:\n            self.__limite_disponivel -= self._valor\n            print(\"Pagamento efetuado no Credito\")\n    \nclass Pix(Pagamento):\n    def __init__(self, valor, descricao, chave: str, banco: str):\n        super().__init__(valor, descricao)\n        self.__chave: str = chave\n        self.__banco: str = banco\n    \n    def processar(self):\n        self.validar_valor()\n        print(f\"Pix com o valor:{self._valor} efetuado com sucesso para o {self.__chave} para o banco: {self.__banco}\")\n\nclass Boleto(Pagamento):\n    def __init__(self, valor, descricao, codigo_barra: str, vencimento: str):\n        super().__init__(valor, descricao)\n        self.__codigo_barra: str = codigo_barra\n        self.__vencimento: str = vencimento\n\n    def processar(self):\n        print (\"Boleto gerado. Aguardando pagamento...\") \n\ndef processar_pagamento(pagamento: Pagamento):\n    pagamento.validar_valor()\n    pagamento.resumo()\n    pagamento.processar()\n\npagamentos = [\n    Pix(150, \"Camisa esportiva\", \"email@ex.com\", \"Banco XPTO\"),\n    cartao_de_Credito(400, \"T\u00eanis esportivo\", \"1234 5678 9123 4567\", \"Cliente X\", 500),\n    Boleto(89.90, \"Livro de Python\", \"123456789000\", \"2025-01-10\"),\n    cartao_de_Credito(800, \"Notebook\", \"9999 8888 7777 6666\", \"Cliente Y\", 700),  # deve falhar\n]\n\nfor pagamento in pagamentos:\n    processar_pagamento(pagamento)",
+            "lines": "65"
         }
     ]
 }
