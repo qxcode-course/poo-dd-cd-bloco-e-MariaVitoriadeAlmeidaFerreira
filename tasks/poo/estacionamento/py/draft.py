@@ -24,3 +24,10 @@ class Veiculo(ABC):
 
     def __str__(self) -> str:
         return f"{self._tipo.rjust(10, "_")}: {self.__id.rjust(10, "_")}: {self._horaEntrada}"
+    
+class Bike(Veiculo):
+    def __init__(self, id):
+        super().__init__(id, "Bike")
+    
+    def calcularValor(self, horaSaida:int):
+        return 3
