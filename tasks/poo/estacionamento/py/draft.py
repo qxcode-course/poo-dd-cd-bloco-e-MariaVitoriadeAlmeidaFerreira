@@ -31,3 +31,12 @@ class Bike(Veiculo):
     
     def calcularValor(self, horaSaida:int):
         return 3
+
+class Moto(Veiculo):
+    def __init__(self, id):
+        super().__init__(self, "Moto")
+
+    def calcularValor(self, horaSaida:int):
+        aux = horaSaida - self._horaEntrada
+        return aux / 20
+        

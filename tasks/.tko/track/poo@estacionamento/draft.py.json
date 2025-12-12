@@ -7,8 +7,18 @@
         },
         {
             "label": "2025-12-12_09-38-57",
-            "content": "from abc import ABC, abstractmethod\n\nclass Veiculo(ABC):\n    def __init__(self, id:str, tipo:str):\n        self.__id: str = id \n        self._tipo: str = tipo\n        self._horaEntrada: int \n    \n    def setEntrada(self, horaEntrada:int ) -> None:\n        self._horaEntrada = horaEntrada\n\n    def getEntrada(self) -> int:\n        return self._horaEntrada\n    \n    def getTipo(self) -> str:\n        return self._tipo\n    \n    def getId(self) -> str:\n        return self.__id\n    \n    @abstractmethod\n    def calcularValor(self, horaSair: int) -> None:\n        pass",
+            "content": "@@ -560,287 +560,4 @@\n pass\n-%0A%0A    def __str__(self) -%3E str:%0A        return f%22%7Bself._tipo.rjust(10, %22_%22)%7D: %7Bself.__id.rjust(10, %22_%22)%7D: %7Bself._horaEntrada%7D%22%0A    %0Aclass Bike(Veiculo):%0A    def __init__(self, id):%0A        super().__init__(id, %22Bike%22)%0A    %0A    def calcularValor(self, horaSaida:int):%0A        return 3\n",
             "lines": "23"
+        },
+        {
+            "label": "2025-12-12_10-01-59",
+            "content": "@@ -839,13 +839,8 @@\n return 3\n-%0A    \n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-12-12_10-02-08",
+            "content": "from abc import ABC, abstractmethod\n\nclass Veiculo(ABC):\n    def __init__(self, id:str, tipo:str):\n        self.__id: str = id \n        self._tipo: str = tipo\n        self._horaEntrada: int \n    \n    def setEntrada(self, horaEntrada:int ) -> None:\n        self._horaEntrada = horaEntrada\n\n    def getEntrada(self) -> int:\n        return self._horaEntrada\n    \n    def getTipo(self) -> str:\n        return self._tipo\n    \n    def getId(self) -> str:\n        return self.__id\n    \n    @abstractmethod\n    def calcularValor(self, horaSair: int) -> None:\n        pass\n\n    def __str__(self) -> str:\n        return f\"{self._tipo.rjust(10, \"_\")}: {self.__id.rjust(10, \"_\")}: {self._horaEntrada}\"\n    \nclass Bike(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Bike\")\n    \n    def calcularValor(self, horaSaida:int):\n        return 3\n    ",
+            "lines": "34"
         }
     ]
 }
