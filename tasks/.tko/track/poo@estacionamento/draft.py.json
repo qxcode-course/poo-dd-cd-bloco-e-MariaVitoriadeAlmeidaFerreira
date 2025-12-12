@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2025-12-07_11-19-58",
-            "content": "",
+            "content": "@@ -1,563 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Veiculo(ABC):%0A    def __init__(self, id:str, tipo:str):%0A        self.__id: str = id %0A        self._tipo: str = tipo%0A        self._horaEntrada: int %0A    %0A    def setEntrada(self, horaEntrada:int ) -%3E None:%0A        self._horaEntrada = horaEntrada%0A%0A    def getEntrada(self) -%3E int:%0A        return self._horaEntrada%0A    %0A    def getTipo(self) -%3E str:%0A        return self._tipo%0A    %0A    def getId(self) -%3E str:%0A        return self.__id%0A    %0A    @abstractmethod%0A    def calcularValor(self, horaSair: int) -%3E None:%0A        pass\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-12-12_09-38-57",
+            "content": "from abc import ABC, abstractmethod\n\nclass Veiculo(ABC):\n    def __init__(self, id:str, tipo:str):\n        self.__id: str = id \n        self._tipo: str = tipo\n        self._horaEntrada: int \n    \n    def setEntrada(self, horaEntrada:int ) -> None:\n        self._horaEntrada = horaEntrada\n\n    def getEntrada(self) -> int:\n        return self._horaEntrada\n    \n    def getTipo(self) -> str:\n        return self._tipo\n    \n    def getId(self) -> str:\n        return self.__id\n    \n    @abstractmethod\n    def calcularValor(self, horaSair: int) -> None:\n        pass",
+            "lines": "23"
         }
     ]
 }
