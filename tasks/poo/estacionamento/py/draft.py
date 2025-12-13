@@ -50,4 +50,24 @@ class Carro(Veiculo):
         if resul > 5:
             return resul
 
-        
+class Estacionamento:
+    def __init__(self):
+        self.__veiculos = list[Veiculo]
+        self.__horaAtual:int
+
+    def procurarVeiculo(self, id: str) -> int:
+        for i in range(0, len(self.__veiculos)):
+            if self.__veiculos[i].getId() == id: 
+
+
+def main():
+    estacionamento = Estacionamento()
+    while True:
+        linha: str = input()
+        print("$" + linha)
+        args: list[str] = linha.split("")
+        if args[0] == "end":
+            break
+        elif args[0] == "show":
+            print(estacionamento)
+main()
