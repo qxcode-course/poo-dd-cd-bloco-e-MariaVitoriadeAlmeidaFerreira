@@ -23,7 +23,7 @@ class Veiculo(ABC):
         pass
 
     def __str__(self) -> str:
-        return f"{self._tipo.rjust(10, "_")}: {self.__id.rjust(10, "_")}: {self._horaEntrada}"
+        return f"{self._tipo.rjust(10, '_')} : {self.__id.rjust(10, '_')} : {self._horaEntrada}"
     
 class Bike(Veiculo):
     def __init__(self, id):
@@ -49,6 +49,7 @@ class Carro(Veiculo):
         resul = aux / 10
         if resul > 5:
             return resul
+        return 5
 
 class Estacionamento:
     def __init__(self):
@@ -59,7 +60,7 @@ class Estacionamento:
         for i in range(0, len(self.__veiculos)):
             if self.__veiculos[i].getId() == id: 
                 return i
-            return -1
+        return -1
     
     def estacionar(self, veiculo: Veiculo) -> None:
         veiculo.setEntrada(self.__horaAtual)
@@ -69,15 +70,16 @@ class Estacionamento:
         aux = self.procurarVeiculo(id)
         if aux != -1:
             veiculo = self.__veiculos.pop(aux)
-            print(f"{veiculo.getTipo()} chegou: {veiculo.getEntrada()}  saiu {self.__horaAtual}. Pagar R$ {veiculo.calcularValor(horaSaida = self.__horaAtual):_.2f}")
+            print(f"{veiculo.getTipo()} chegou {veiculo.getEntrada()} saiu {self.__horaAtual}. Pagar R$ {veiculo.calcularValor(horaSaida = self.__horaAtual):_.2f}")
 
+    def passarTempo(self, Tempo: int) -> None:
+        self.__horaAtual += Tempo
 
     def __str__(self) -> str:
         if len(self.__veiculos) != 0:
-            return f"{"\n".join(str(x) for x in self.__veiculos)}\nHora Atual: {self.__horaAtual}"
-
-
-
+            return "\n".join(str(x) for x in self.__veiculos) + f"\nHora atual: {self.__horaAtual}"
+        else: 
+            return f"Hora atual: {self.__horaAtual}"
 
 
 def main():
@@ -90,4 +92,19 @@ def main():
             break
         elif args[0] == "show":
             print(estacionamento)
+        elif args[0] == "tempo":
+            estacionamento.passarTempo(Tempo = int(args[1]))
+        elif args[0] == "estacionar":
+            if args[1] == "bike":
+                veiculo = Bike(args[2])
+                estacionamento.estacionar(veiculo)
+            elif args[1] == "moto":
+                veiculo = Moto(args[2])
+                estacionamento.estacionar(veiculo)
+            elif args[1] == "carro":
+                veiculo = Carro(args[2])
+                estacionamento.estacionar(veiculo)
+        elif args[0] == "pagar":
+            estacionamento.pagar(args[1])
+
 main()
