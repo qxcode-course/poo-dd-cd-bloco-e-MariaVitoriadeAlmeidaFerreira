@@ -4,13 +4,13 @@ class Veiculo(ABC):
     def __init__(self, id:str, tipo:str):
         self.__id: str = id 
         self._tipo: str = tipo
-        self._horaEntrada: int 
+        self._horaEntrada: int = 0
     
     def setEntrada(self, horaEntrada:int ) -> None:
         self._horaEntrada = horaEntrada
 
     def getEntrada(self) -> int:
-        return self._horaEntrada
+        return self._horaEntrada 
     
     def getTipo(self) -> str:
         return self._tipo
@@ -52,20 +52,40 @@ class Carro(Veiculo):
 
 class Estacionamento:
     def __init__(self):
-        self.__veiculos = list[Veiculo]
-        self.__horaAtual:int
+        self.__veiculos: list[Veiculo] = []
+        self.__horaAtual:int = 0
 
     def procurarVeiculo(self, id: str) -> int:
         for i in range(0, len(self.__veiculos)):
             if self.__veiculos[i].getId() == id: 
+                return i
+            return -1
+    
+    def estacionar(self, veiculo: Veiculo) -> None:
+        veiculo.setEntrada(self.__horaAtual)
+        self.__veiculos.append(veiculo)
+
+    def pagar(self, id: str) -> None:
+        aux = self.procurarVeiculo(id)
+        if aux != -1:
+            veiculo = self.__veiculos.pop(aux)
+            print(f"{veiculo.getTipo()} chegou: {veiculo.getEntrada()}  saiu {self.__horaAtual}. Pagar R$ {veiculo.calcularValor(horaSaida = self.__horaAtual):_.2f}")
+
+
+    def __str__(self) -> str:
+        if len(self.__veiculos) != 0:
+            return f"{"\n".join(str(x) for x in self.__veiculos)}\nHora Atual: {self.__horaAtual}"
+
+
+
 
 
 def main():
     estacionamento = Estacionamento()
     while True:
-        linha: str = input()
-        print("$" + linha)
-        args: list[str] = linha.split("")
+        line: str = input()
+        print("$" + line)
+        args: list[str] = line.split(" ")
         if args[0] == "end":
             break
         elif args[0] == "show":

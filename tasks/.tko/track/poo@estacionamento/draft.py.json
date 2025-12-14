@@ -27,8 +27,53 @@
         },
         {
             "label": "2025-12-13_20-48-36",
-            "content": "from abc import ABC, abstractmethod\n\nclass Veiculo(ABC):\n    def __init__(self, id:str, tipo:str):\n        self.__id: str = id \n        self._tipo: str = tipo\n        self._horaEntrada: int \n    \n    def setEntrada(self, horaEntrada:int ) -> None:\n        self._horaEntrada = horaEntrada\n\n    def getEntrada(self) -> int:\n        return self._horaEntrada\n    \n    def getTipo(self) -> str:\n        return self._tipo\n    \n    def getId(self) -> str:\n        return self.__id\n    \n    @abstractmethod\n    def calcularValor(self, horaSair: int) -> None:\n        pass\n\n    def __str__(self) -> str:\n        return f\"{self._tipo.rjust(10, \"_\")}: {self.__id.rjust(10, \"_\")}: {self._horaEntrada}\"\n    \nclass Bike(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Bike\")\n    \n    def calcularValor(self, horaSaida:int):\n        return 3\n\nclass Moto(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Moto\")\n\n    def calcularValor(self, horaSaida:int):\n        aux = horaSaida - self._horaEntrada\n        return aux / 20\n    \nclass Carro(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Carro\")\n\n    def calcularValor(self, horaSaida:int):\n        aux = horaSaida - self._horaEntrada\n        resul = aux / 10\n        if resul > 5:\n            return resul\n\nclass Estacionamento:\n    def __init__(self):\n        self.__veiculos = list[Veiculo]\n        self.__horaAtual:int\n\n    def procurarVeiculo(self, id: str) -> int:\n        for i in range(0, len(self.__veiculos)):\n            if self.__veiculos[i].getId() == id: \n\n\ndef main():\n    estacionamento = Estacionamento()\n    while True:\n        linha: str = input()\n        print(\"$\" + linha)\n        args: list[str] = linha.split(\"\")\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(estacionamento)\nmain()",
+            "content": "@@ -1561,129 +1561,8 @@\n d: %0A\n-                return i%0A            return -1%0A    %0A    def estacionar(self, veiculo: Veiculo) -%3E None:%0A        veiculo.%0A\n %0A%0Ade\n",
             "lines": "73"
+        },
+        {
+            "label": "2025-12-13_21-03-12",
+            "content": "@@ -1681,165 +1681,8 @@\n ulo.\n-setEntrada(self.__horaAtual)%0A        self.__veiculos.append(veiculo)%0A%0A    def pagar(self, id: str) -%3E None:%0A        aux = self.procurarVeiculo(id)%0A%0A        %0A\n %0A%0A%0Ad\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-12-13_22-00-35",
+            "content": "@@ -1824,24 +1824,25 @@\n ulo(id)%0A\n+%0A\n         \n if aux !\n@@ -1837,251 +1837,8 @@\n     \n-if aux != -1:%0A            veiculo = self.__veiculos.pop(aux)%0A            %0A%0A    def __str__(self) -%3E str:%0A        if len(self.__veiculos) != 0:%0A            return f%22%7B%22%5Cn%22.join(str(x) for x in self.__veiculos)%7D%5CnHora Atual: %7Bself.__horaAtual%7D%22%0A%0A\n %0A%0A%0A%0A\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-12-13_22-15-54",
+            "content": "@@ -1893,16 +1893,28 @@\n op(aux)%0A\n+            \n %0A%0A    de\n@@ -2156,17 +2156,18 @@\n      lin\n-e\n+ha\n : str = \n@@ -2197,17 +2197,18 @@\n $%22 + lin\n-e\n+ha\n )%0A      \n@@ -2234,17 +2234,18 @@\n  lin\n-e\n+ha\n .split(%22\n  %22)%0A\n@@ -2240,17 +2240,16 @@\n .split(%22\n- \n %22)%0A     \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-12-13_22-18-31",
+            "content": "@@ -1897,72 +1897,8 @@\n ux)%0A\n-            print(f%22%7Bveiculo.getTipo()%7D chegou: %7Bveiculo.get%7D%22)%0A\n %0A%0A  \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-12-13_22-20-13",
+            "content": "@@ -1957,17 +1957,8 @@\n .get\n-Entrada()\n %7D%22)%0A\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-12-13_22-20-14",
+            "content": "@@ -1967,102 +1967,8 @@\n a()%7D\n-  saiu %7Bself.__horaAtual%7D. Pagar R$ %7Bveiculo.calcularValor(horaSaida = self.__horaAtual):_.2f%7D\n %22)%0A%0A\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-12-13_22-20-44",
+            "content": "@@ -1384,13 +1384,8 @@\n ulo%5D\n- = %5B%5D\n %0A   \n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-12-13_22-21-57",
+            "content": "@@ -183,19 +183,16 @@\n da: int \n-= 0\n %0A    %0A  \n@@ -347,17 +347,16 @@\n aEntrada\n- \n %0A    %0A  \n@@ -1364,17 +1364,18 @@\n veiculos\n-:\n+ =\n  list%5BVe\n",
+            "lines": "93"
+        },
+        {
+            "label": "2025-12-13_23-13-43",
+            "content": "from abc import ABC, abstractmethod\n\nclass Veiculo(ABC):\n    def __init__(self, id:str, tipo:str):\n        self.__id: str = id \n        self._tipo: str = tipo\n        self._horaEntrada: int = 0\n    \n    def setEntrada(self, horaEntrada:int ) -> None:\n        self._horaEntrada = horaEntrada\n\n    def getEntrada(self) -> int:\n        return self._horaEntrada \n    \n    def getTipo(self) -> str:\n        return self._tipo\n    \n    def getId(self) -> str:\n        return self.__id\n    \n    @abstractmethod\n    def calcularValor(self, horaSair: int) -> None:\n        pass\n\n    def __str__(self) -> str:\n        return f\"{self._tipo.rjust(10, \"_\")}: {self.__id.rjust(10, \"_\")}: {self._horaEntrada}\"\n    \nclass Bike(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Bike\")\n    \n    def calcularValor(self, horaSaida:int):\n        return 3\n\nclass Moto(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Moto\")\n\n    def calcularValor(self, horaSaida:int):\n        aux = horaSaida - self._horaEntrada\n        return aux / 20\n    \nclass Carro(Veiculo):\n    def __init__(self, id):\n        super().__init__(id, \"Carro\")\n\n    def calcularValor(self, horaSaida:int):\n        aux = horaSaida - self._horaEntrada\n        resul = aux / 10\n        if resul > 5:\n            return resul\n\nclass Estacionamento:\n    def __init__(self):\n        self.__veiculos: list[Veiculo] = []\n        self.__horaAtual:int\n\n    def procurarVeiculo(self, id: str) -> int:\n        for i in range(0, len(self.__veiculos)):\n            if self.__veiculos[i].getId() == id: \n                return i\n            return -1\n    \n    def estacionar(self, veiculo: Veiculo) -> None:\n        veiculo.setEntrada(self.__horaAtual)\n        self.__veiculos.append(veiculo)\n\n    def pagar(self, id: str) -> None:\n        aux = self.procurarVeiculo(id)\n        if aux != -1:\n            veiculo = self.__veiculos.pop(aux)\n            print(f\"{veiculo.getTipo()} chegou: {veiculo.getEntrada()}  saiu {self.__horaAtual}. Pagar R$ {veiculo.calcularValor(horaSaida = self.__horaAtual):_.2f}\")\n\n\n    def __str__(self) -> str:\n        if len(self.__veiculos) != 0:\n            return f\"{\"\\n\".join(str(x) for x in self.__veiculos)}\\nHora Atual: {self.__horaAtual}\"\n\n\n\n\n\ndef main():\n    estacionamento = Estacionamento()\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(estacionamento)\nmain()",
+            "lines": "93"
         }
     ]
 }
